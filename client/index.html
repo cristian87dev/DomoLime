@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html ng-app="domoApp">
 <head>
-	<title>Test 1</title>
+	<title>DomoLime</title>
+	
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-	<div ng-controller="fuente">
-		<i class="{{awe + ' '}}fa-github"></i>
-	</div>
+	<header class="container">
+		<nav class="navegation" ng-controller="navController">
+			<div class="button">
+				<button class="fa fa-bars btn btn-primary btn-lg" ng-class="{'warning' : isVisible, 'red' : !isVisible}" ng-click="toggleNav()"></button>
+			</div>
+			<ul class="items toggle" ng-if="isVisible">
+				<li>Config</li>
+				<li>Help</li>
+			</ul>
+		</nav>
+	</header>
+	
+	<section class="container" ng-view></section>
 
 	<!-- SCRIPTS -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/bootstrap.min.js"></script>
 	<script src="vendor/angular/angular.js"></script>
-	<script src="assets/js/app.js"></script>
+	<script src="vendor/angular/angular-route.js"></script>
+	<script src="https://code.angularjs.org/1.3.2/angular-animate.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/controllers.js"></script>
+	<script src="app/views/views.js"></script>
 </body>
 </html>

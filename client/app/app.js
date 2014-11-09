@@ -1,0 +1,1 @@
+var domoApp = angular.module('domoApp', ['ngRoute', 'ngAnimate']);
